@@ -8,6 +8,7 @@ QT       += core gui sql
 
 TARGET = NeoVox
 TEMPLATE = app
+CONFIG += release
 
 
 SOURCES += main.cpp\
@@ -40,5 +41,9 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     Res.qrc
+
+win32 {
+RC_FILE += rc.rc
+}
 
 TRANSLATIONS += Vox_en.ts

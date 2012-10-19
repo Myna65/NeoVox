@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ResultatWindow</class>
+ <widget class="QWidget" name="ResultatWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <column>
+      <property name="text">
+       <string>Titre de la leçon</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Score du dernier test</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Score de l'avant-dernier test</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Score de l'antépénultième test</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Score des trois derniers tests</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

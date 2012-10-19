@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/ico">
+        <file>ico.png</file>
+    </qresource>
+    <qresource prefix="/png">
+        <file>en.png</file>
+        <file>nl.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>612</width>
+    <height>390</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>NeoVox 1.1</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>612</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <addaction name="actionNouvelle_s_rie"/>
+    <addaction name="separator"/>
+    <addaction name="actionImprimer_une_le_on"/>
+    <addaction name="separator"/>
+    <addaction name="actionOptions"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <widget class="QMenu" name="menuEdition">
+    <property name="title">
+     <string>Édition</string>
+    </property>
+    <addaction name="actionEditer_une_s_rie"/>
+    <addaction name="actionSupprimer_une_s_rie"/>
+    <addaction name="actionRenum_roter_les_s_ries"/>
+   </widget>
+   <widget class="QMenu" name="menuTest">
+    <property name="title">
+     <string>Test</string>
+    </property>
+    <widget class="QMenu" name="menuSens">
+     <property name="title">
+      <string>Sens</string>
+     </property>
+     <addaction name="actionFran_ais_N_erlandais"/>
+     <addaction name="actionN_erlandais_Fran_ais"/>
+    </widget>
+    <widget class="QMenu" name="menuType">
+     <property name="title">
+      <string>Type</string>
+     </property>
+     <addaction name="actionTest_classique"/>
+     <addaction name="actionTest_rapide"/>
+    </widget>
+    <addaction name="actionTenter_un_test"/>
+    <addaction name="separator"/>
+    <addaction name="actionR_sultats"/>
+    <addaction name="separator"/>
+    <addaction name="menuSens"/>
+    <addaction name="menuType"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>?</string>
+    </property>
+    <addaction name="action_propos_de_NeoVox"/>
+    <addaction name="action_propos_de_Qt"/>
+   </widget>
+   <addaction name="menuFichier"/>
+   <addaction name="menuEdition"/>
+   <addaction name="menuTest"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionEditer_une_s_rie">
+   <property name="text">
+    <string>Editer une leçon</string>
+   </property>
+  </action>
+  <action name="actionOptions">
+   <property name="text">
+    <string>Options</string>
+   </property>
+  </action>
+  <action name="actionNouvelle_s_rie">
+   <property name="text">
+    <string>Nouvelle leçon</string>
+   </property>
+  </action>
+  <action name="actionTenter_un_test">
+   <property name="text">
+    <string>Tenter un test</string>
+   </property>
+  </action>
+  <action name="actionR_sultats">
+   <property name="text">
+    <string>Résultats</string>
+   </property>
+  </action>
+  <action name="actionFran_ais_N_erlandais">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Français -&gt; Néerlandais</string>
+   </property>
+  </action>
+  <action name="actionN_erlandais_Fran_ais">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Néerlandais -&gt; Français</string>
+   </property>
+  </action>
+  <action name="actionTest_classique">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Test classique</string>
+   </property>
+  </action>
+  <action name="actionTest_rapide">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Test rapide</string>
+   </property>
+  </action>
+  <action name="action_propos_de_NeoVox">
+   <property name="text">
+    <string>À propos de NeoVox</string>
+   </property>
+  </action>
+  <action name="action_propos_de_Qt">
+   <property name="text">
+    <string>À propos de Qt</string>
+   </property>
+  </action>
+  <action name="actionSupprimer_une_s_rie">
+   <property name="text">
+    <string>Supprimer une leçon</string>
+   </property>
+  </action>
+  <action name="actionRenum_roter_les_s_ries">
+   <property name="text">
+    <string>Renuméroter les leçons</string>
+   </property>
+  </action>
+  <action name="actionImprimer_une_le_on">
+   <property name="text">
+    <string>Imprimer une leçon</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

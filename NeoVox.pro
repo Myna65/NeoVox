@@ -6,7 +6,7 @@
 
 QT       += core gui sql
 
-TARGET = VOX
+TARGET = NeoVox
 TEMPLATE = app
 
 

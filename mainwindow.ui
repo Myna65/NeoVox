@@ -74,6 +74,8 @@
     <property name="title">
      <string>?</string>
     </property>
+    <addaction name="actionAide"/>
+    <addaction name="separator"/>
     <addaction name="action_propos_de_NeoVox"/>
     <addaction name="action_propos_de_Qt"/>
    </widget>
@@ -177,6 +179,11 @@
   <action name="actionImprimer_une_le_on">
    <property name="text">
     <string>Imprimer une leçon</string>
+   </property>
+  </action>
+  <action name="actionAide">
+   <property name="text">
+    <string>Aide</string>
    </property>
   </action>
  </widget>

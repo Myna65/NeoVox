@@ -42,6 +42,7 @@ public slots:
     void openRenum();
     void openSuppr();
     void openImpr();
+    void openAide();
 };
 
 #endif // MAINWINDOW_H

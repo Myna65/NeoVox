@@ -10,6 +10,8 @@
 #include <QtCore/qsettings.h>
 #include <QtGui/qmessagebox.h>
 #include <QtGui/QCloseEvent>
+#include <QtGui/qdesktopservices.h>
+#include <QtCore/qurl.h>
 
 MainWindow* MainWindow::instance = 0;
 
@@ -35,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionSupprimer_une_s_rie,SIGNAL(triggered()),this,SLOT(openSuppr()));
     connect(ui->actionQuitter,SIGNAL(triggered()),qApp,SLOT(quit()));
     connect(ui->actionImprimer_une_le_on,SIGNAL(triggered()),this,SLOT(openImpr()));
+    connect(ui->actionAide,SIGNAL(triggered()),this,SLOT(openAide()));
     QSettings set("NeoVox","NeoVox");
     opt.f5=set.value("5").toBool();
     setDefault();
@@ -115,4 +118,8 @@ void MainWindow::closeEvent(QCloseEvent *event)
         event->accept();
     else
         event->ignore();
+}
+void MainWindow::openAide()
+{
+    QDesktopServices::openUrl(QUrl("file://"+QApplication::applicationDirPath()+"/Manuel.pdf"));
 }

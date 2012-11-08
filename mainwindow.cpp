@@ -11,7 +11,10 @@
 #include <QtGui/qmessagebox.h>
 #include <QtGui/QCloseEvent>
 #include <QtGui/qdesktopservices.h>
+#include <QtGui/qfiledialog.h>
 #include <QtCore/qurl.h>
+#include <QtXml/QtXml>
+#include <QtSql/QtSql>
 
 MainWindow* MainWindow::instance = 0;
 
@@ -37,7 +40,9 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionSupprimer_une_s_rie,SIGNAL(triggered()),this,SLOT(openSuppr()));
     connect(ui->actionQuitter,SIGNAL(triggered()),qApp,SLOT(quit()));
     connect(ui->actionImprimer_une_le_on,SIGNAL(triggered()),this,SLOT(openImpr()));
+    connect(ui->actionExporter_du_voabulaire,SIGNAL(triggered()),this,SLOT(openExport()));
     connect(ui->actionAide,SIGNAL(triggered()),this,SLOT(openAide()));
+    connect(ui->actionImporter_du_vocabulaire,SIGNAL(triggered()),this,SLOT(openImport()));
     QSettings set("NeoVox","NeoVox");
     opt.f5=set.value("5").toBool();
     setDefault();
@@ -112,6 +117,10 @@ void MainWindow::openImpr()
 {
     setCentralWidget(new ChoixTestWindow(this,4));
 }
+void MainWindow::openExport()
+{
+    setCentralWidget(new ChoixTestWindow(this,5));
+}
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     if(QMessageBox::question(this,"Quitter ?",trUtf8("Êtes-vous sûr de vouloir quitter ?"),QMessageBox::Yes|QMessageBox::No)==QMessageBox::Yes)
@@ -122,4 +131,61 @@ void MainWindow::closeEvent(QCloseEvent *event)
 void MainWindow::openAide()
 {
     QDesktopServices::openUrl(QUrl("file://"+QApplication::applicationDirPath()+"/Manuel.pdf"));
+}
+void MainWindow::openImport()
+{
+    QString path=QFileDialog::getOpenFileName(MainWindow::Instance(),"Choisir le fichier de vocabulaire",QDir::homePath(),"Fichiers XML (*.xml);;Tous les fichiers (*)");
+    QDomDocument dom;
+    QFile doc(path);
+    if(!doc.open(QIODevice::ReadOnly))
+    {
+        QMessageBox::critical(MainWindow::Instance(),"Erreur",trUtf8("Impossible d'ouvrir le fichier spécifié.<br/> Vérifiez le chemin et les permissions du fichier"));
+        doc.close();
+        return;
+    }
+    if(!dom.setContent(&doc))
+    {
+        QMessageBox::critical(MainWindow::Instance(),"Erreur",trUtf8("Le fichier spécifié ne semble pas être un fichier XML valide."));
+        doc.close();
+        return;
+    }
+    doc.close();
+    QDomElement voc=dom.firstChildElement("vocabulaire");
+    if(voc.isNull())
+    {
+        QMessageBox::critical(MainWindow::Instance(),"Erreur",trUtf8("Le fichier XML spécifié ne semble pas être un fichier de vocabulaire"));
+        return;
+    }
+    QDomElement ser=voc.firstChildElement("serie");
+    for(;!ser.isNull();ser=ser.nextSiblingElement("serie"))
+    {
+        QSqlQuery req;
+        int num;
+        req.exec("SELECT MAX(num)+1 FROM Serie");
+        if(req.next())
+        {
+            num=req.value(0).toInt();
+            if(num==0)
+                num++;
+            req.prepare("INSERT INTO Serie (num,titre) VALUES (:n,:t)");
+            req.bindValue(":t",ser.attribute("titre"));
+            req.bindValue(":n",num);
+            req.exec();
+            req.prepare("SELECT id FROM Serie WHERE num=:n");
+            req.bindValue(":n",num);
+            req.exec();
+            req.next();
+            int id=req.value(0).toInt();
+            QDomElement mot=ser.firstChildElement("mot");
+            for(;!mot.isNull();mot=mot.nextSiblingElement("mot"))
+            {
+                req.prepare("INSERT INTO Mot (fr,nl,serie_id) VALUES (:f,:n,:s)");
+                req.bindValue(":s",id);
+                req.bindValue(":f",mot.attribute("fr"));
+                req.bindValue(":n",mot.attribute("nl"));
+                req.exec();
+            }
+        }
+    }
+    MainWindow::Instance()->setDefault();
 }

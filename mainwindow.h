@@ -43,6 +43,8 @@ public slots:
     void openSuppr();
     void openImpr();
     void openAide();
+    void openExport();
+    void openImport();
 };
 
 #endif // MAINWINDOW_H

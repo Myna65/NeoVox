@@ -8,6 +8,8 @@
 #include <QtGui/qprintdialog.h>
 #include <QtGui/qtextedit.h>
 #include <QtGui/qtexttable.h>
+#include <QtGui/qfiledialog.h>
+#include <fstream>
 #include "introwindow.h"
 
 ChoixTestWindow::ChoixTestWindow(QWidget *parent, int modi) :
@@ -53,6 +55,12 @@ ChoixTestWindow::ChoixTestWindow(QWidget *parent, int modi) :
         ui->label->setText(trUtf8("Sélectionnez la leçon à imprimer"));
         ui->listWidget->setToolTip("");
         ui->pushButton->setText(trUtf8("Imprimer la leçon sélectionnée"));
+    }
+    if(modif==5)
+    {
+        ui->label->setText(trUtf8("Sélectionnez la/les leçons à exporter"));
+        ui->listWidget->setToolTip("");
+        ui->pushButton->setText(trUtf8("Exporter"));
     }
 }
 
@@ -200,6 +208,40 @@ void ChoixTestWindow::ouvrirTest()
         doc.print(&printer);
 
 
+        MainWindow::Instance()->setDefault();
+    }
+    else if(modif==5)
+    {
+        QModelIndexList list = ui->listWidget->selectionModel()->selectedIndexes();
+        if(list.size()==0)
+        {
+            QMessageBox::critical(MainWindow::Instance(),trUtf8("Impossible de commencer l'exportation"),trUtf8("Aucun élément sélectionné"));
+            return;
+        }
+        std::string path=QFileDialog::getSaveFileName(MainWindow::Instance(),trUtf8("Choisir le fichier où enregister le vocabulaire"),QDir::homePath(),"Fichiers XML (*.xml);;Tous les fichiers (*)").toStdString();
+        std::ofstream out(path.c_str());
+        out<<"<?xml version=\"1.0\" encoding=\"ISO-8859-1\" standalone=\"yes\"?>"<<std::endl<<"<vocabulaire>"<<std::endl;
+        for(int i=0;i<list.size();i++)
+        {
+            int sel = list[i].data().toString().section('-',0,0).toInt();
+            QSqlQuery q;
+            q.prepare("SELECT id,titre FROM Serie WHERE num=:i");
+            q.bindValue(":i",sel);
+            q.exec();
+            q.next();
+            int id=q.value(0).toInt();
+            out<<"<serie titre=\""<<q.value(1).toString().toStdString()<<"\">"<<std::endl;
+            q.prepare("SELECT fr,nl FROM Mot WHERE serie_id=:s");
+            q.bindValue(":s",id);
+            q.exec();
+            while(q.next())
+            {
+                out<<"<mot fr=\""<<q.value(0).toString().toStdString()<<"\" nl=\""<<q.value(1).toString().toStdString()<<"\"/>"<<std::endl;
+            }
+            out<<"</serie>"<<std::endl;
+        }
+        out<<"</vocabulaire>"<<std::endl;
+        out.close();
         MainWindow::Instance()->setDefault();
     }
 }

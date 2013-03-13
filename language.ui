@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Language</class>
+ <widget class="QDialog" name="Language">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>80</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Choix de la langue</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Langue : </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>Anglais</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Néerlandais</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Latin</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Grec</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Allemand</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Espagnol</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Valider</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>pressed()</signal>
+   <receiver>Language</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>57</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>39</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

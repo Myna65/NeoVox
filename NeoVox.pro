@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     introwindow.cpp \
     optionswindow.cpp \
     about.cpp \
-    welcome.cpp
+    welcome.cpp \
+    language.cpp
 
 HEADERS  += mainwindow.h \
     choixtestwindow.h \
@@ -28,7 +29,8 @@ HEADERS  += mainwindow.h \
     introwindow.h \
     optionswindow.h \
     about.h \
-    welcome.h
+    welcome.h \
+    language.h
 
 FORMS    += mainwindow.ui \
     choixtestwindow.ui \
@@ -37,7 +39,8 @@ FORMS    += mainwindow.ui \
     introwindow.ui \
     optionswindow.ui \
     about.ui \
-    welcome.ui
+    welcome.ui \
+    language.ui
 
 RESOURCES += \
     Res.qrc

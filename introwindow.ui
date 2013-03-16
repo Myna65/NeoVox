@@ -16,6 +16,9 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QFormLayout" name="formLayout">
+     <property name="fieldGrowthPolicy">
+      <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+     </property>
      <item row="0" column="0">
       <widget class="QLabel" name="titreDeLaSRieLabel">
        <property name="text">
@@ -26,15 +29,15 @@
      <item row="0" column="1">
       <widget class="QLineEdit" name="titreDeLaSRieLineEdit"/>
      </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="motFranAisLabel">
+     <item row="1" column="0">
+      <widget class="QLabel" name="numRoDeLaSRieLabel">
        <property name="text">
-        <string>Mot français :</string>
+        <string>Numéro de la leçon :</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="motFranAisLineEdit"/>
+     <item row="1" column="1">
+      <widget class="QSpinBox" name="numRoDeLaSRieSpinBox"/>
      </item>
      <item row="2" column="1">
       <widget class="Line" name="line">
@@ -43,25 +46,25 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
+     <item row="3" column="0">
       <widget class="QLabel" name="motNErlandaisLabel">
        <property name="text">
         <string>Mot néerlandais :</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
+     <item row="3" column="1">
       <widget class="QLineEdit" name="motNErlandaisLineEdit"/>
      </item>
-     <item row="1" column="1">
-      <widget class="QSpinBox" name="numRoDeLaSRieSpinBox"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="numRoDeLaSRieLabel">
+     <item row="4" column="0">
+      <widget class="QLabel" name="motFranAisLabel">
        <property name="text">
-        <string>Numéro de la leçon :</string>
+        <string>Mot français :</string>
        </property>
       </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="motFranAisLineEdit"/>
      </item>
     </layout>
    </item>

@@ -5,5 +5,9 @@
     <qresource prefix="/png">
         <file>en.png</file>
         <file>nl.png</file>
+        <file>de.png</file>
+        <file>el.png</file>
+        <file>es.png</file>
+        <file>la.png</file>
     </qresource>
 </RCC>

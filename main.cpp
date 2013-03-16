@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     QString langue(l.getCh().c_str());
     QTranslator translator,t2;
     translator.load("qt_fr");
-    t2.load("Vox"+langue);
+    t2.load("Vox_"+langue);
     a.installTranslator(&translator);
     a.installTranslator(&t2);
     QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE");
@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
     {
         QMessageBox::warning(0, "Erreur lors de l'ouverture du fichier de données", db.lastError().text());
     }
+    db.exec("PRAGMA synchronous = OFF;");
     MainWindow* w=MainWindow::Instance();
     w->show();
     int ret=a.exec();

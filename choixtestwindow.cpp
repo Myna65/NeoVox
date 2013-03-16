@@ -44,10 +44,10 @@ ChoixTestWindow::ChoixTestWindow(QWidget *parent, int modi) :
     }
     if(modif==3)
     {
-        ui->listWidget->setSelectionMode(QAbstractItemView::SingleSelection);
-        ui->label->setText(trUtf8("Sélectionnez la leçon à supprimer"));
+        ui->listWidget->setSelectionMode(QAbstractItemView::MultiSelection);
+        ui->label->setText(trUtf8("Sélectionnez la/les leçon(s) à supprimer"));
         ui->listWidget->setToolTip("");
-        ui->pushButton->setText(trUtf8("Supprimer la leçon sélectionnée"));
+        ui->pushButton->setText(trUtf8("Supprimer la/les leçon(s) sélectionnée(s)"));
     }
     if(modif==4)
     {
@@ -110,30 +110,34 @@ void ChoixTestWindow::ouvrirTest()
     }
     else if(modif==3)
     {
-        if(QMessageBox::warning(MainWindow::Instance(),"Confirmation",trUtf8("Êtes-vous sûr de vouloir supprimer la leçon sélectionnée"),QMessageBox::Yes|QMessageBox::No)==QMessageBox::Yes)
+        if(QMessageBox::warning(MainWindow::Instance(),"Confirmation",trUtf8("Êtes-vous sûr de vouloir supprimer la/les leçon(s) sélectionnée(s)"),QMessageBox::Yes|QMessageBox::No)==QMessageBox::Yes)
         {
-            int sel = ui->listWidget->currentIndex().data().toString().section('-',0,0).toInt();
-            QSqlQuery q;
-            q.prepare("SELECT id FROM Serie WHERE num=:i");
-            q.bindValue(":i",sel);
-            q.exec();
-            q.next();
-            int id=q.value(0).toInt();
-            q.prepare("DELETE FROM Serie WHERE id=:i");
-            q.bindValue(":i",id);
-            q.exec();
-            q.prepare("DELETE FROM Result WHERE mot_id IN (SELECT id FROM Mot WHERE serie_id=:i)");
-            q.bindValue(":i",id);
-            q.exec();
-            q.prepare("DELETE FROM Mot WHERE serie_id=:i");
-            q.bindValue(":i",id);
-            q.exec();
-            q.prepare("DELETE FROM Jeu WHERE serie_id=:i");
-            q.bindValue(":i",id);
-            q.exec();
-            q.prepare("UPDATE Serie SET num=num-1 WHERE num>:i");
-            q.bindValue(":i",sel);
-            q.exec();
+            QModelIndexList list = ui->listWidget->selectionModel()->selectedIndexes();
+            for(int i=0;i<list.size();i++)
+            {
+                int sel = list[i].data().toString().section('-',0,0).toInt()-i;
+                QSqlQuery q;
+                q.prepare("SELECT id FROM Serie WHERE num=:i");
+                q.bindValue(":i",sel);
+                q.exec();
+                q.next();
+                int id=q.value(0).toInt();
+                q.prepare("DELETE FROM Serie WHERE id=:i");
+                q.bindValue(":i",id);
+                q.exec();
+                q.prepare("DELETE FROM Result WHERE mot_id IN (SELECT id FROM Mot WHERE serie_id=:i)");
+                q.bindValue(":i",id);
+                q.exec();
+                q.prepare("DELETE FROM Mot WHERE serie_id=:i");
+                q.bindValue(":i",id);
+                q.exec();
+                q.prepare("DELETE FROM Jeu WHERE serie_id=:i");
+                q.bindValue(":i",id);
+                q.exec();
+                q.prepare("UPDATE Serie SET num=num-1 WHERE num>:i");
+                q.bindValue(":i",sel);
+                q.exec();
+            }
             MainWindow::Instance()->setDefault();
         }
     }

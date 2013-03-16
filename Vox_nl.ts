@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_US">
+<TS version="2.0" language="nl_NL">
 <context>
     <name>About</name>
     <message utf8="true">
@@ -11,7 +11,6 @@
     <message utf8="true">
         <location filename="about.ui" line="20"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NeoVox version 1.2&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Code source disponible ici : &lt;a href=&quot;http://github.com/Myna65/NeoVox&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://github.com/Myna65/NeoVox&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Date de sortie de cette version : 08/11/2012&lt;br/&gt;&lt;/p&gt;&lt;p&gt;© 2012 Meynaert Nathan&lt;br/&gt;&lt;/p&gt;&lt;p&gt;License : GPL GNU version 3&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Collège Saint-Barthélemy : &lt;a href=&quot;http://www.saintbar.be&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.saintbar.be&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <oldsource>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NeoVox version 1.1&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Site du projet : &lt;a href=&quot;http://github.com/Myna65/Vox/wiki&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://github.com/Myna65/Vox/wiki&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Code source disponible ici : &lt;a href=&quot;http://github.com/Myna65/Vox&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://github.com/Myna65/Vox&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Date de sortie de cette version : 19/10/2012&lt;br/&gt;&lt;/p&gt;&lt;p&gt;© 2012 Meynaert Nathan&lt;br/&gt;&lt;/p&gt;&lt;p&gt;License : GPL GNU version 3&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Collège Saint Barthélémy : &lt;a href=&quot;http://www.saintbar.be&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.saintbar.be&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -30,7 +29,6 @@
     <message utf8="true">
         <location filename="choixtestwindow.ui" line="20"/>
         <source>Choisissez la/les leçons sur lesquelles vous désirez être testé</source>
-        <oldsource>Choisissez la/les série(s) sur lesquelles vous désirez être testé</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
@@ -95,6 +93,12 @@
     </message>
     <message utf8="true">
         <location filename="choixtestwindow.cpp" line="79"/>
+        <location filename="choixtestwindow.cpp" line="91"/>
+        <source>Impossible de démarrer le test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="choixtestwindow.cpp" line="79"/>
         <location filename="choixtestwindow.cpp" line="218"/>
         <source>Aucun élément sélectionné</source>
         <translation type="unfinished"></translation>
@@ -117,7 +121,7 @@
     <message utf8="true">
         <location filename="choixtestwindow.cpp" line="190"/>
         <source>Néerlandais</source>
-        <translation>Anglais</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="choixtestwindow.cpp" line="218"/>
@@ -127,12 +131,6 @@
     <message utf8="true">
         <location filename="choixtestwindow.cpp" line="221"/>
         <source>Choisir le fichier où enregister le vocabulaire</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="choixtestwindow.cpp" line="79"/>
-        <location filename="choixtestwindow.cpp" line="91"/>
-        <source>Impossible de démarrer le test</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -146,8 +144,7 @@
     <message utf8="true">
         <location filename="introwindow.cpp" line="342"/>
         <source>Néerlandais</source>
-        <oldsource>NÃ©erlandais</oldsource>
-        <translation>Anglais</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="introwindow.cpp" line="345"/>
@@ -160,8 +157,7 @@
     <message utf8="true">
         <location filename="introwindow.cpp" line="86"/>
         <source>Veulliez remplir les champs néerlandais et français</source>
-        <oldsource>Veulliez remplir les champs nÃ©erlandais et franÃ§ais</oldsource>
-        <translation>Veulliez remplir les champs anglais et français</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <location filename="introwindow.cpp" line="116"/>
@@ -194,7 +190,7 @@
     <message utf8="true">
         <location filename="language.ui" line="35"/>
         <source>Néerlandais</source>
-        <translation type="unfinished">Anglais</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="language.ui" line="40"/>
@@ -227,7 +223,6 @@
     <message>
         <location filename="mainwindow.ui" line="14"/>
         <source>NeoVox 1.2</source>
-        <oldsource>NeoVox 1.1</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -270,9 +265,54 @@
         <source>Editer une leçon</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="mainwindow.ui" line="103"/>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message utf8="true">
         <location filename="mainwindow.ui" line="108"/>
         <source>Nouvelle leçon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="113"/>
+        <source>Tenter un test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="mainwindow.ui" line="118"/>
+        <source>Résultats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="mainwindow.ui" line="129"/>
+        <source>Français -&gt; Néerlandais</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="mainwindow.ui" line="137"/>
+        <source>Néerlandais -&gt; Français</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="148"/>
+        <source>Test classique</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="159"/>
+        <source>Test rapide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="mainwindow.ui" line="164"/>
+        <source>À propos de NeoVox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="mainwindow.ui" line="169"/>
+        <source>À propos de Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
@@ -306,58 +346,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="103"/>
-        <source>Options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="113"/>
-        <source>Tenter un test</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="mainwindow.ui" line="118"/>
-        <source>Résultats</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="mainwindow.ui" line="129"/>
-        <source>Français -&gt; Néerlandais</source>
-        <translation>Français -&gt; Anglais</translation>
-    </message>
-    <message utf8="true">
-        <location filename="mainwindow.ui" line="137"/>
-        <source>Néerlandais -&gt; Français</source>
-        <translation>Anglais -&gt; Français</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="148"/>
-        <source>Test classique</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="159"/>
-        <source>Test rapide</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="mainwindow.ui" line="164"/>
-        <source>À propos de NeoVox</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="mainwindow.ui" line="169"/>
-        <source>À propos de Qt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <source>Néerlandais</source>
-        <translation type="obsolete">Anglais</translation>
-    </message>
-    <message>
         <location filename="mainwindow.cpp" line="114"/>
         <source>:/png/nl.png</source>
-        <translation>:/png/en.png</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <location filename="mainwindow.cpp" line="126"/>
@@ -390,31 +381,26 @@
     <message utf8="true">
         <location filename="resultatwindow.ui" line="24"/>
         <source>Titre de la leçon</source>
-        <oldsource>Titre de la série</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="resultatwindow.ui" line="29"/>
         <source>Score du dernier test</source>
-        <oldsource>Moyenne du dernier test</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="resultatwindow.ui" line="34"/>
         <source>Score de l&apos;avant-dernier test</source>
-        <oldsource>Moyenne de l&apos;avant-dernier test</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <location filename="resultatwindow.ui" line="39"/>
         <source>Score de l&apos;antépénultième test</source>
-        <oldsource>Moyenne de l&apos;antépénultième test</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="resultatwindow.ui" line="44"/>
         <source>Score des trois derniers tests</source>
-        <oldsource>Moyenne des trois derniers tests</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
@@ -438,7 +424,7 @@
     <message utf8="true">
         <location filename="testwindow.ui" line="34"/>
         <source>Texte néerlandais</source>
-        <translation>Texte anglais</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <location filename="testwindow.ui" line="48"/>
@@ -490,7 +476,6 @@
     <message utf8="true">
         <location filename="introwindow.ui" line="22"/>
         <source>Titre de la leçon :</source>
-        <oldsource>Titre de la série :</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
@@ -501,12 +486,11 @@
     <message utf8="true">
         <location filename="introwindow.ui" line="49"/>
         <source>Mot néerlandais :</source>
-        <translation>Mot anglais :</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <location filename="introwindow.ui" line="62"/>
         <source>Numéro de la leçon :</source>
-        <oldsource>Numéro de la série :</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -517,7 +501,6 @@
     <message utf8="true">
         <location filename="introwindow.ui" line="81"/>
         <source>Valider la leçon</source>
-        <oldsource>Valider la série</oldsource>
         <translation type="unfinished"></translation>
     </message>
 </context>

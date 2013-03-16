@@ -135,6 +135,8 @@ void MainWindow::openAide()
 void MainWindow::openImport()
 {
     QString path=QFileDialog::getOpenFileName(MainWindow::Instance(),"Choisir le fichier de vocabulaire",QDir::homePath(),"Fichiers XML (*.xml);;Tous les fichiers (*)");
+    if(path=="")
+        return;
     QDomDocument dom;
     QFile doc(path);
     if(!doc.open(QIODevice::ReadOnly))
@@ -167,25 +169,28 @@ void MainWindow::openImport()
             num=req.value(0).toInt();
             if(num==0)
                 num++;
-            req.prepare("INSERT INTO Serie (num,titre) VALUES (:n,:t)");
-            req.bindValue(":t",ser.attribute("titre"));
-            req.bindValue(":n",num);
-            req.exec();
-            req.prepare("SELECT id FROM Serie WHERE num=:n");
-            req.bindValue(":n",num);
-            req.exec();
-            req.next();
-            int id=req.value(0).toInt();
-            QDomElement mot=ser.firstChildElement("mot");
-            for(;!mot.isNull();mot=mot.nextSiblingElement("mot"))
-            {
-                req.prepare("INSERT INTO Mot (fr,nl,serie_id) VALUES (:f,:n,:s)");
-                req.bindValue(":s",id);
-                req.bindValue(":f",mot.attribute("fr"));
-                req.bindValue(":n",mot.attribute("nl"));
-                req.exec();
-            }
         }
+        else
+            num=1;
+        req.prepare("INSERT INTO Serie (num,titre) VALUES (:n,:t)");
+        req.bindValue(":t",ser.attribute("titre"));
+        req.bindValue(":n",num);
+        req.exec();
+        req.prepare("SELECT id FROM Serie WHERE num=:n");
+        req.bindValue(":n",num);
+        req.exec();
+        req.next();
+        int id=req.value(0).toInt();
+        QDomElement mot=ser.firstChildElement("mot");
+        for(;!mot.isNull();mot=mot.nextSiblingElement("mot"))
+        {
+            req.prepare("INSERT INTO Mot (fr,nl,serie_id) VALUES (:f,:n,:s)");
+            req.bindValue(":s",id);
+            req.bindValue(":f",mot.attribute("fr"));
+            req.bindValue(":n",mot.attribute("nl"));
+            req.exec();
+        }
+
     }
     MainWindow::Instance()->setDefault();
 }

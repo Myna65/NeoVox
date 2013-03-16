@@ -124,7 +124,7 @@ void TestWindow::motsuivant()
             enl.clear();
             efr.clear();
             eids.clear();
-            MainWindow::Instance()->getStatusBar()->showMessage(QString(trUtf8("Score : %1 %   Mots restants : %2   %3 Erreurs")).arg(100*jus/tot).arg(fr.size()).arg(efr.size()));
+            MainWindow::Instance()->getStatusBar()->showMessage(QString(trUtf8("Score : %1 %   Mots restants : %2   %3 Erreur(s)")).arg(100*jus/tot).arg(fr.size()).arg(efr.size()));
         }
         else
         {

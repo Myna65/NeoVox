@@ -8,7 +8,7 @@ QT       += core gui sql xml
 
 TARGET = NeoVox
 TEMPLATE = app
-CONFIG += release
+CONFIG += debug
 
 
 SOURCES += main.cpp\
@@ -49,4 +49,4 @@ win32 {
 RC_FILE += rc.rc
 }
 
-TRANSLATIONS += Vox_en.ts
+TRANSLATIONS += Vox_en.ts Vox_nl.ts Vox_es.ts Vox_de.ts Vox_la.ts Vox_el.ts

@@ -41,7 +41,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Score des trois derniers tests</string>
+       <string>Moyenne des trois derniers tests</string>
       </property>
      </column>
     </widget>

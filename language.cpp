@@ -19,7 +19,7 @@ std::string Language::getCh()
     {
         return "en";
     }
-    if(c==QString("Néerlandais"))
+    if(c==QString(trUtf8("Néerlandais")))
     {
         return "nl";
     }

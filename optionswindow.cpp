@@ -25,7 +25,7 @@ optionswindow::optionswindow(QWidget *parent) :
     ui(new Ui::optionswindow)
 {
     ui->setupUi(this);
-    QSettings set("Vox","Vox");
+    QSettings set("Vox.ini");
     ui->checkBox->setChecked(set.value("5").toBool());
 }
 
@@ -38,7 +38,7 @@ void optionswindow::open()
     int ret=exec();
     if(ret==QDialog::Accepted)
     {
-        QSettings set("Vox","Vox");
+        QSettings set("Vox.ini");
         set.setValue("5",ui->checkBox->isChecked());
         MainWindow::Instance()->opt.f5=ui->checkBox->isChecked();
     }

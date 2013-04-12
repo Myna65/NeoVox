@@ -51,8 +51,8 @@ Introwindow::Introwindow(QWidget *parent,bool modif, int ser) :
     connect(ui->numRoDeLaSRieSpinBox,SIGNAL(editingFinished()),this,SLOT(valNum()));
     connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(clickMot()));
     connect(ui->pushButton_2,SIGNAL(clicked()),this,SLOT(clickSerie()));
-    connect(ui->motFranAisLineEdit,SIGNAL(returnPressed()),ui->motNErlandaisLineEdit,SLOT(setFocus()));
-    connect(ui->motNErlandaisLineEdit,SIGNAL(returnPressed()),this,SLOT(clickMot()));
+    connect(ui->motNErlandaisLineEdit,SIGNAL(returnPressed()),ui->motFranAisLineEdit,SLOT(setFocus()));
+    connect(ui->motFranAisLineEdit,SIGNAL(returnPressed()),this,SLOT(clickMot()));
     if(modif)
     {
         ui->pushButton_2->setText("Enregister les modifications");
@@ -100,7 +100,7 @@ void Introwindow::clickMot()
     QString fr=ui->motFranAisLineEdit->text(),nl=ui->motNErlandaisLineEdit->text();
     if(fr==""||nl=="")
     {
-        QMessageBox::critical(this,"Champs non remplis",trUtf8("Veulliez remplir les champs néerlandais et français"));
+        QMessageBox::critical(this,"Champs non remplis",trUtf8("Veulliez remplir les champs des deux langues"));
         return;
     }
     model.insertRow(1);
@@ -108,7 +108,7 @@ void Introwindow::clickMot()
     model.setData(model.index(0,1),nl);
     ui->motFranAisLineEdit->setText("");
     ui->motNErlandaisLineEdit->setText("");
-    ui->motFranAisLineEdit->setFocus();
+    ui->motNErlandaisLineEdit->setFocus();
 }
 void Introwindow::clickSerie()
 {

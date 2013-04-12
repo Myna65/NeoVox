@@ -60,7 +60,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionExporter_du_voabulaire,SIGNAL(triggered()),this,SLOT(openExport()));
     connect(ui->actionAide,SIGNAL(triggered()),this,SLOT(openAide()));
     connect(ui->actionImporter_du_vocabulaire,SIGNAL(triggered()),this,SLOT(openImport()));
-    QSettings set("NeoVox","NeoVox");
+    QSettings set("Vox.ini");
     opt.f5=set.value("5").toBool();
     setDefault();
 }

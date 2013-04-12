@@ -53,7 +53,6 @@ ChoixTestWindow::ChoixTestWindow(QWidget *parent, int modi) :
     }
     if(modif==2)
     {
-        ui->listWidget->setSelectionMode(QAbstractItemView::SingleSelection);
         ui->label->setText(trUtf8("Renumérotez les leçons"));
         ui->listWidget->setToolTip("");
         ui->pushButton->setText(trUtf8("Valider la renumérotation"));

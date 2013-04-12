@@ -17,7 +17,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NeoVox version 1.3&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Code source disponible ici : &lt;a href=&quot;http://github.com/Myna65/NeoVox&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://github.com/Myna65/NeoVox&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Date de sortie de cette version : 16/03/2013&lt;br/&gt;&lt;/p&gt;&lt;p&gt;© 2012-2013 Meynaert Nathan&lt;br/&gt;&lt;/p&gt;&lt;p&gt;License : GPL GNU version 3&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Collège Saint-Barthélemy : &lt;a href=&quot;http://www.saintbar.be&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.saintbar.be&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;NeoVox version 1.3.1&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Code source disponible ici : &lt;a href=&quot;http://github.com/Myna65/NeoVox&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://github.com/Myna65/NeoVox&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Date de sortie de cette version : 12/04/2013&lt;br/&gt;&lt;/p&gt;&lt;p&gt;© 2012-2013 Meynaert Nathan&lt;br/&gt;&lt;/p&gt;&lt;p&gt;License : GPL GNU version 3&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Collège Saint-Barthélemy : &lt;a href=&quot;http://www.saintbar.be&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.saintbar.be&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="openExternalLinks">
       <bool>true</bool>

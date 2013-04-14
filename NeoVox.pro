@@ -8,7 +8,7 @@ QT       += core gui sql xml
 
 TARGET = NeoVox
 TEMPLATE = app
-CONFIG += debug
+CONFIG += release
 
 
 SOURCES += main.cpp\

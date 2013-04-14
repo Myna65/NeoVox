@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////
-//    <one line to give the program's name and a brief idea of what it does.>
-//    Copyright (C) <year>  <name of author>
+//    NeoVox, apprentissage de vocabulaire de langue étrangère.
+//    Copyright (C) 2012-2013 Meynaert Nathan
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by

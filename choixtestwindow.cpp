@@ -104,7 +104,7 @@ void ChoixTestWindow::ouvrirTest()
             MainWindow::Instance()->setCentralWidget(tw);
         else
         {
-            QMessageBox::information(MainWindow::Instance(),trUtf8("Impossible de démarrer le test"),trUtf8("Tous les éléments de la leçon ont été validés justes lors des cinq dernières demandes<br/> Si vous souhaitez quand même faire le test, désactivez cette option."));
+            QMessageBox::information(MainWindow::Instance(),trUtf8("Impossible de démarrer le test"),trUtf8("Tous les éléments de la leçon ont été validés justes lors des cinq dernières demandes.<br/> Si vous souhaitez quand même faire le test, désactivez cette option dans le menu."));
             MainWindow::Instance()->setDefault();
         }
     }

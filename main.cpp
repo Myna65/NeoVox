@@ -28,6 +28,7 @@
 
 int main(int argc, char *argv[])
 {
+    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
     srand(time(0));
     QApplication a(argc, argv);
     Language l;
